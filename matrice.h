@@ -18,6 +18,7 @@ class matrice {
     //costruttori
     matrice(size_t numero_righe, size_t numero_colonne); //matrice vuota
     matrice(vector<vector<double> > valori); //matrice con valori iniziali
+    matrice(const vector<riga> righe);//costruttore con vector<riga>
 
     //metodi
     void set_riga(size_t index, const riga& nuova_riga); //metodo per settare il contenuto di una riga della matrice
@@ -26,10 +27,17 @@ class matrice {
     size_t get_numero_righe() const;
     size_t get_numero_colonne() const;
     double get(size_t riga, size_t colonna) const;
-    matrice calcola_trasposta();
     double calcola_traccia();
     bool verifica_simmetria();
     bool verifica_antisimmetria();
+    matrice elimina_riga_copia(size_t index);
+    matrice elimina_colonna_copia(size_t index);
+    matrice calcola_trasposta_copia();
+    matrice elimina_riga_colonna_copia(size_t r, size_t c);
+    double get_determinante();
+    matrice get_inversa();
+    bool verifica_invertibilita();
+
 
 
     //operatori
