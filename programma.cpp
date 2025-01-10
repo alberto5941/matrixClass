@@ -8,7 +8,7 @@
 #include "matrice.h"
 using namespace std;
 
-int main() {
+int main() { //programma per testare alcuni metodi della classe matrice
     int n; //dimensioni della matrice
     cout << "inserisci le dimensioni della matrice " << endl;
     cin >> n;
@@ -95,6 +95,23 @@ int main() {
     matrice_prodotto = matrice1*matrice2;
     cout<< "matrice1 * matrice2: " << endl;
     matrice_prodotto.stampa();
+    cout << endl;
 
-return 0;
+
+    matrice copia(n-1, n);
+    copia = matrice1.elimina_riga_copia(1);
+    cout << "matrice1 senza una riga: " << endl;
+    copia.stampa();
+
+   matrice copia_colonna(n, n-1);
+   copia_colonna = matrice1.elimina_colonna_copia(1);
+   cout << "matrice1 senza una colonna: " << endl;
+   copia_colonna.stampa();
+
+   matrice trasposta(n, n);
+   trasposta = matrice1.calcola_trasposta_copia();
+   cout << "traposta della matrice1: " << endl;
+   trasposta.stampa();
+
+   return 0;
 }
